@@ -1,4 +1,12 @@
 import { Injectable } from '@nestjs/common';
+import { ImcCalculatorResponse } from './requests/imc.calculator.response';
+
+function translateImc(imc) {
+    if (imc < 18.5) return 'magreza';
+    if (imc < 24.9) return 'normal';
+    if (imc < 30.0) return 'sobrepeso';
+    return 'obesidade'
+}
 
 @Injectable()
 export class ImcCalculatorService {
@@ -9,5 +17,14 @@ export class ImcCalculatorService {
             "sobrepeso": 24.90,
             "obesidade": 30.00,
         }
+    }
+
+    calculate(weight: number, height: number) {
+        const imc = weight / (height ** 2);
+        const imcDescription = translateImc(imc);
+
+        return {
+            weight, height, imc, imcDescription
+        } as ImcCalculatorResponse;
     }
 }
