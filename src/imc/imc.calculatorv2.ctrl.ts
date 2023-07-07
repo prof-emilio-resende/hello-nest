@@ -11,10 +11,10 @@ import { ImcCalculatorRequest } from './requests/Imc.calculator.request';
 import { ImcCalculatorResponse } from './requests/imc.calculator.response';
 
 @Controller({
-    version: [VERSION_NEUTRAL, '1'],
+    version: ['2', VERSION_NEUTRAL],
     path: 'imc',
 })
-export class ImcCalculatorController {
+export class ImcCalculatorControllerV2 {
     constructor(private readonly imcCalcSvc: ImcCalculatorService) {}
 
     @Get('table')
@@ -30,7 +30,7 @@ export class ImcCalculatorController {
 
     @Post('calculate')
     calculateImc(@Body() imcCalcRequest: ImcCalculatorRequest) {
-        console.log('calling calculate v1');
+        console.log('calling calculate v2');
         return this.imcCalcSvc.calculate(
             imcCalcRequest.weight,
             imcCalcRequest.height,
