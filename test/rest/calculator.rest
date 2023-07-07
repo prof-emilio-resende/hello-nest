@@ -21,10 +21,17 @@ Content-Type: application/json
   "height": 1.77
 }
 
+### Get Table IMC v2
+
+GET {{baseUrl}}/v2/imc/table HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoibXVydGEiLCJyb2xlcyI6WyJyZWFkZXIiXSwiaWF0IjoxNjg4NzY0OTYyLCJleHAiOjE2ODg3NjUwMjJ9.uUG5RQX94SwoECvYn7f6SOhBOPD9BIu7Kchz9zRNCtU
+
 
 ### Calculate IMC v2
 POST {{baseUrl}}/v2/imc/calculate HTTP/1.1
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoibXVydGEiLCJyb2xlcyI6WyJyZWFkZXIiXSwiaWF0IjoxNjg4NzY0OTYyLCJleHAiOjE2ODg3NjUwMjJ9.uUG5RQX94SwoECvYn7f6SOhBOPD9BIu7Kchz9zRNCtU
 
 {
   "weight": 90,
